@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nails Room – Маникюр & Нокти | Бургас</title>
+<meta name="description" content="Nails Room – Професионален маникюр, ноктопластика и терапии в Бургас. Запазете своя час онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============ VARIABLES ============ */
+:root {
+  --teal:    #2A6B5A;
+  --teal-lt: #3D8B76;
+  --gold:    #C9A84C;
+  --gold-lt: #E8C96A;
+  --cream:   #FAF6F0;
+  --sand:    #F0E8DA;
+  --dark:    #1A1A1A;
+  --muted:   #5A5A5A;
+  --white:   #FFFFFF;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'Jost', sans-serif;
+  --radius: 2px;
+  --transition: 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { color: inherit; text-decoration: none; }
+
+/* ============ NAV ============ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(250,246,240,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  transition: var(--transition);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--teal);
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--teal); }
+.nav-cta {
+  background: var(--teal);
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: 1px;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.15em !important;
+  transition: background 0.3s !important;
+}
+.nav-cta:hover { background: var(--teal-lt) !important; color: var(--white) !important; }
+
+/* Hamburger */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--teal); transition: var(--transition); }
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 60vw; height: 80vh;
+  background: radial-gradient(ellipse, rgba(42,107,90,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 60px 60px 80px;
+  position: relative;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.hero-tag::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--teal);
+}
+.hero-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 380px;
+  margin-bottom: 44px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--teal);
+  color: var(--white);
+  padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--teal-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,107,90,0.25); }
+.btn-outline {
+  background: transparent;
+  color: var(--teal);
+  padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--teal);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+}
+.btn-outline:hover { background: var(--teal); color: var(--white); transform: translateY(-2px); }
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  gap: 4px;
+  padding: 4px;
+}
+.hero-img-grid div {
+  overflow: hidden;
+  position: relative;
+}
+.hero-img-grid div img {
+  transition: transform 0.8s ease;
+}
+.hero-img-grid div:hover img { transform: scale(1.05); }
+.hero-img-grid div:nth-child(1) { grid-row: span 2; }
+
+/* Gold border accent */
+.hero-accent {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  opacity: 0.4;
+}
+
+/* ============ ABOUT ============ */
+.about {
+  background: var(--sand);
+  padding: 100px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+}
+.about::after {
+  content: 'NR';
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  font-family: var(--font-display);
+  font-size: 12rem;
+  font-weight: 300;
+  color: rgba(42,107,90,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+.about h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.about h2 em { font-style: italic; color: var(--teal); }
+.about p { color: var(--muted); font-weight: 300; line-height: 1.9; margin-bottom: 16px; }
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.stat {
+  border-top: 2px solid var(--gold);
+  padding-top: 16px;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--teal);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.about-img {
+  position: relative;
+}
+.about-img-main {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.12);
+}
+.about-img-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: var(--teal);
+  color: var(--white);
+  padding: 20px 28px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  max-width: 180px;
+  box-shadow: 0 8px 32px rgba(42,107,90,0.3);
+}
+
+/* ============ SERVICES ============ */
+.services {
+  padding: 100px 80px;
+  background: var(--cream);
+}
+.services-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+.services-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 300;
+  margin-top: 12px;
+}
+.services-header h2 em { font-style: italic; color: var(--teal); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.service-cat {
+  background: var(--cream);
+  padding: 40px 36px;
+  transition: var(--transition);
+}
+.service-cat:hover {
+  background: var(--sand);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  z-index: 1;
+  position: relative;
+}
+.service-cat-icon {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 20px;
+}
+.service-cat h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--teal);
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(201,168,76,0.25);
+  gap: 12px;
+}
+.service-item:last-child { border-bottom: none; }
+.service-name {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--dark);
+  flex: 1;
+}
+.service-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+.price-bgn {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+.price-eur {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--teal);
+  white-space: nowrap;
+}
+.currency-note {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* ============ GALLERY ============ */
+.gallery {
+  padding: 100px 80px;
+  background: var(--dark);
+}
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+.gallery-header .section-label { color: var(--gold-lt); }
+.gallery-header .section-label::after { background: var(--gold-lt); }
+.gallery-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--white);
+}
+.gallery-header h2 em { font-style: italic; color: var(--gold); }
+.gallery-fb a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  border-bottom: 1px solid rgba(201,168,76,0.4);
+  padding-bottom: 2px;
+  transition: color 0.3s;
+}
+.gallery-fb a:hover { color: var(--white); }
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 220px 220px;
+  gap: 4px;
+}
+.gallery-item {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(42,107,90,0);
+  transition: var(--transition);
+}
+.gallery-item:hover::after { background: rgba(42,107,90,0.35); }
+.gallery-item img { transition: transform 0.7s ease; }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gallery-item:nth-child(4) { grid-column: span 2; }
+
+/* ============ BOOKING ============ */
+.booking {
+  padding: 100px 80px;
+  background: var(--sand);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: start;
+}
+.booking-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.booking-info h2 em { font-style: italic; color: var(--teal); }
+.booking-info p { color: var(--muted); font-weight: 300; line-height: 1.9; margin-bottom: 32px; }
+.booking-details { display: flex; flex-direction: column; gap: 16px; }
+.booking-detail {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.88rem;
+  color: var(--dark);
+}
+.booking-detail-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.booking-detail-icon svg { width: 16px; height: 16px; fill: none; stroke: white; stroke-width: 1.8; }
+
+.booking-form {
+  background: var(--white);
+  padding: 50px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  border-top: 3px solid var(--gold);
+}
+.booking-form h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--teal);
+  margin-bottom: 32px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.form-group label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1px solid #E0D8CE;
+  background: var(--cream);
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--dark);
+  outline: none;
+  transition: border-color 0.3s;
+  border-radius: var(--radius);
+  width: 100%;
+  -webkit-appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--teal); }
+.form-group select { cursor: pointer; }
+.form-group textarea { height: 100px; resize: none; }
+.form-submit {
+  width: 100%;
+  background: var(--teal);
+  color: var(--white);
+  padding: 17px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--teal-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,107,90,0.3); }
+
+/* Success message */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success.show { display: block; }
+.form-success .checkmark {
+  width: 64px; height: 64px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.form-success .checkmark svg { width: 28px; height: 28px; fill: none; stroke: white; stroke-width: 2.5; }
+.form-success h4 { font-family: var(--font-display); font-size: 1.8rem; color: var(--teal); margin-bottom: 8px; }
+.form-success p { color: var(--muted); font-size: 0.9rem; }
+
+/* ============ CONTACT ============ */
+.contact {
+  padding: 80px 80px;
+  background: var(--teal);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.contact-block h4 {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 16px;
+}
+.contact-block p,
+.contact-block a {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.contact-block a:hover { color: var(--white); text-decoration: underline; }
+.contact-logo {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+}
+.contact-logo span { color: var(--gold); }
+.contact-tagline {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+}
+.contact-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.contact-social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  color: rgba(255,255,255,0.7) !important;
+}
+.contact-social a:hover { border-color: var(--gold); color: var(--gold) !important; text-decoration: none !important; }
+.contact-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ============ FOOTER ============ */
+footer {
+  background: #111;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; }
+
+/* ============ SCROLL ANIMATIONS ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ MOBILE MENU ============ */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--teal);
+}
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--teal);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  nav { padding: 16px 30px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 60px 30px 40px; }
+  .hero-right { height: 55vw; max-height: 400px; }
+  .about { grid-template-columns: 1fr; padding: 70px 30px; gap: 40px; }
+  .about-img { display: none; }
+  .services { padding: 70px 30px; }
+  .gallery { padding: 70px 30px; }
+  .gallery-masonry { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 180px); }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .gallery-item:nth-child(4) { grid-column: span 1; }
+  .gallery-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .booking { grid-template-columns: 1fr; padding: 70px 30px; gap: 40px; }
+  .booking-form { padding: 32px; }
+  .contact { grid-template-columns: 1fr; padding: 60px 30px; gap: 40px; }
+  footer { flex-direction: column; gap: 8px; padding: 20px 30px; }
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2.8rem; }
+  .hero-img-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 120px); }
+  .hero-img-grid div:nth-child(1) { grid-row: span 2; }
+  .form-row { grid-template-columns: 1fr; }
+  .gallery-masonry { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, 160px); }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .about-stats { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============ CURRENCY TOGGLE ============ */
+.currency-toggle {
+  display: inline-flex;
+  gap: 0;
+  border: 1.5px solid var(--teal);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-left: 16px;
+  vertical-align: middle;
+}
+.currency-toggle button {
+  background: none;
+  border: none;
+  padding: 4px 12px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.25s;
+}
+.currency-toggle button.active {
+  background: var(--teal);
+  color: var(--white);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-logo">Nails <span>Room</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">За нас</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#gallery">Галерия</a></li>
+    <li><a href="#booking" class="nav-cta">Запази час</a></li>
+  </ul>
+  <button class="hamburger" onclick="openMenu()" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <a href="#about" onclick="closeMenu()">За нас</a>
+  <a href="#services" onclick="closeMenu()">Услуги</a>
+  <a href="#gallery" onclick="closeMenu()">Галерия</a>
+  <a href="#booking" onclick="closeMenu()" style="color:var(--gold)">Запази час</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Бургас · Маникюр & Нокти</div>
+    <h1>Красотата<br>е в <em>детайлите</em></h1>
+    <p class="hero-sub">Професионален маникюр, ноктопластика и терапии за ноктите — в уютното студио Nails Room в Бургас.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-primary">Запази час</a>
+      <a href="#services" class="btn-outline">Нашите услуги</a>
+    </div>
+    <div class="hero-accent"></div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-grid">
+      <div><img src="images/11.jpg" alt="Маникюр Nails Room" loading="eager"></div>
+      <div><img src="images/5.jpg" alt="Гел нокти" loading="eager"></div>
+      <div><img src="images/6.jpg" alt="Ноктопластика" loading="eager"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="reveal">
+    <div class="section-label">За нас</div>
+    <h2>Студио с <em>душа</em><br>и майсторство</h2>
+    <p>Nails Room е повече от студио за маникюр — това е пространство, в което всяка клиентка се чувства специална. Работим само с висококачествени материали и следим всяка тенденция в света на нейл арта.</p>
+    <p>С богат опит и отдаденост към детайла, нашата цел е да създадем нокти, които да отразяват вашата личност — елегантни, смели или деликатни.</p>
+    <div class="about-stats">
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Доволни клиентки</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Години опит</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Натурални материали</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-img reveal">
+    <div class="about-img-main">
+      <img src="images/12.jpg" alt="Nails Room Studio" loading="lazy">
+    </div>
+    <div class="about-img-badge">
+      "Всеки нокът е малко произведение на изкуството"
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <div class="section-label" style="justify-content:center">Ценоразпис</div>
+    <h2>Нашите <em>услуги</em>
+      <span class="currency-toggle">
+        <button class="active" id="btnBGN" onclick="setCurrency('BGN')">лв</button>
+        <button id="btnEUR" onclick="setCurrency('EUR')">€</button>
+      </span>
+    </h2>
+  </div>
+
+  <div class="services-grid reveal">
+
+    <!-- МАНИКЮР -->
+    <div class="service-cat">
+      <div class="service-cat-icon"></div>
+      <h3>Маникюр</h3>
+      <div class="service-item">
+        <span class="service-name">Маникюр без покритие</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="25">25 лв</span>
+          <span class="price-eur">13 €</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Гел лак — къси нокти</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="40">40 лв</span>
+          <span class="price-eur">20 €</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Гел лак — дълги нокти</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="45">45 лв</span>
+          <span class="price-eur">23 €</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Гел + Гел лак — къси</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="55">55 лв</span>
+          <span class="price-eur">28 €</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Гел + Гел лак — дълги</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="60">60 лв</span>
+          <span class="price-eur">31 €</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- НОКТОПЛАСТИКА -->
+    <div class="service-cat">
+      <div class="service-cat-icon"></div>
+      <h3>Ноктопластика</h3>
+      <div class="service-item">
+        <span class="service-name">Изграждане с гел</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="90">90–100 лв</span>
+          <span class="price-eur">46–51 €</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Изграждане вграден френски</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="120">120 лв</span>
+          <span class="price-eur">61 €</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Изграждане на счупен нокът</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="5">5 лв</span>
+          <span class="price-eur">3 €</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Поправка на счупен нокът</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="3">3 лв</span>
+          <span class="price-eur">2 €</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ДЕКОРАЦИЯ + ТЕРАПИИ -->
+    <div class="service-cat">
+      <div class="service-cat-icon"></div>
+      <h3>Декорация</h3>
+      <div class="service-item">
+        <span class="service-name">Френски маникюр</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="5">5 лв</span>
+          <span class="price-eur">3 €</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Камъчета, стикери</span>
+        <div class="service-prices">
+          <span class="price-bgn" data-bgn="5">5 лв</span>
+          <span class="price-eur">3 €</span>
+        </div>
+      </div>
+
+      <div style="margin-top:28px">
+        <div class="service-cat-icon"></div>
+        <h3>Терапии</h3>
+        <div class="service-item">
+          <span class="service-name">Парафинова терапия</span>
+          <div class="service-prices">
+            <span class="price-bgn" data-bgn="20">20 лв</span>
+            <span class="price-eur">10 €</span>
+          </div>
+        </div>
+        <div class="service-item">
+          <span class="service-name">IBX терапия</span>
+          <div class="service-prices">
+            <span class="price-bgn" data-bgn="25">25 лв</span>
+            <span class="price-eur">13 €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="currency-note">* Цените са ориентировъчни. Курс: 1 лв = 0.51 € (фиксиран)</p>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <div>
+      <div class="section-label">Портфолио</div>
+      <h2>Нашата <em>работа</em></h2>
+    </div>
+    <div class="gallery-fb">
+      <a href="https://www.facebook.com/Ruminailsroom" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Вижте повече във Facebook
+      </a>
+    </div>
+  </div>
+  <div class="gallery-masonry reveal">
+    <div class="gallery-item"><img src="images/11.jpg" alt="Nails Room работа 1" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/3.jpg" alt="Nails Room работа 2" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/4.jpg" alt="Nails Room работа 3" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/7.jpg" alt="Nails Room работа 4" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/5.jpg" alt="Nails Room работа 5" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/8.jpg" alt="Nails Room работа 6" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/9.jpg" alt="Nails Room работа 7" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/10.jpg" alt="Nails Room работа 8" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/6.jpg" alt="Nails Room работа 9" loading="lazy"></div>
+    <div class="gallery-item"><img src="images/12.jpg" alt="Nails Room работа 10" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="booking" id="booking">
+  <div class="booking-info reveal">
+    <div class="section-label">Онлайн резервация</div>
+    <h2>Запазете<br>своя <em>час</em></h2>
+    <p>Изберете желаната услуга и удобно за вас време. Ще получите потвърждение по имейл или телефон.</p>
+    <div class="booking-details">
+      <div class="booking-detail">
+        <div class="booking-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span>ул. „Цар Калоян" 63, гр. Бургас</span>
+      </div>
+      <div class="booking-detail">
+        <div class="booking-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <a href="tel:+359894714546">+359 894 714 546</a>
+      </div>
+      <div class="booking-detail">
+        <div class="booking-detail-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <span>Пон–Сб: 09:00 – 19:00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking-form reveal">
+    <h3>Нова резервация</h3>
+
+    <div id="bookingFormInner">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Вашето име</label>
+          <input type="text" id="clientName" placeholder="Мария Иванова" required>
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" id="clientPhone" placeholder="+359 8XX XXX XXX" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Имейл (за потвърждение)</label>
+        <input type="email" id="clientEmail" placeholder="maria@example.com">
+      </div>
+      <div class="form-group">
+        <label>Услуга</label>
+        <select id="service">
+          <option value="">— Изберете услуга —</option>
+          <optgroup label="Маникюр">
+            <option>Маникюр без покритие — 25 лв / 13 €</option>
+            <option>Гел лак — къси нокти — 40 лв / 20 €</option>
+            <option>Гел лак — дълги нокти — 45 лв / 23 €</option>
+            <option>Гел + Гел лак — къси — 55 лв / 28 €</option>
+            <option>Гел + Гел лак — дълги — 60 лв / 31 €</option>
+          </optgroup>
+          <optgroup label="Ноктопластика">
+            <option>Изграждане с гел — 90/100 лв</option>
+            <option>Изграждане вграден френски — 120 лв</option>
+            <option>Изграждане на счупен нокът — 5 лв</option>
+            <option>Поправка на счупен нокът — 3 лв</option>
+          </optgroup>
+          <optgroup label="Декорация">
+            <option>Френски маникюр — 5 лв</option>
+            <option>Декорация (камъчета, стикери) — 5 лв</option>
+          </optgroup>
+          <optgroup label="Терапии">
+            <option>Парафинова терапия — 20 лв</option>
+            <option>IBX терапия — 25 лв</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Желана дата</label>
+          <input type="date" id="bookDate" min="">
+        </div>
+        <div class="form-group">
+          <label>Предпочитан час</label>
+          <select id="bookTime">
+            <option value="">— Час —</option>
+            <option>09:00</option><option>09:30</option>
+            <option>10:00</option><option>10:30</option>
+            <option>11:00</option><option>11:30</option>
+            <option>12:00</option><option>12:30</option>
+            <option>13:00</option><option>13:30</option>
+            <option>14:00</option><option>14:30</option>
+            <option>15:00</option><option>15:30</option>
+            <option>16:00</option><option>16:30</option>
+            <option>17:00</option><option>17:30</option>
+            <option>18:00</option><option>18:30</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Допълнителна бележка (по желание)</label>
+        <textarea id="note" placeholder="Специални желания, алергии, предпочитания..."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitBooking()">Изпрати заявка →</button>
+    </div>
+
+    <div class="form-success" id="formSuccess">
+      <div class="checkmark">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h4>Заявката е изпратена!</h4>
+      <p>Ще се свържем с вас до 2 часа за потвърждение.<br>Очакваме ви в Nails Room! 💅</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div>
+    <div class="contact-logo">Nails <span>Room</span></div>
+    <div class="contact-tagline">Студио за маникюр · Бургас</div>
+    <div class="contact-social">
+      <a href="https://www.facebook.com/Ruminailsroom" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="contact-block">
+    <h4>Контакти</h4>
+    <p>
+      ул. „Цар Калоян" 63<br>
+      гр. Бургас, България
+    </p>
+    <br>
+    <a href="tel:+359894714546">+359 894 714 546</a><br>
+    <a href="https://www.facebook.com/Ruminailsroom" target="_blank">Facebook страница</a>
+  </div>
+  <div class="contact-block">
+    <h4>Работно време</h4>
+    <p>
+      Понеделник – Петък<br>
+      09:00 – 19:00
+    </p>
+    <br>
+    <p>
+      Събота<br>
+      09:00 – 16:00
+    </p>
+    <br>
+    <p style="color:rgba(255,255,255,0.4)">Неделя — почивен ден</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p>© 2025 Nails Room · Всички права запазени</p>
+  <p>ул. „Цар Калоян" 63, Бургас · <a href="tel:+359894714546" style="color:rgba(255,255,255,0.4)">+359 894 714 546</a></p>
+</footer>
+
+<!-- ============ SCRIPTS ============ -->
+<script>
+// Set min date for booking
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('bookDate').min = today;
+
+// Mobile menu
+function openMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
+
+// Currency toggle
+let currentCurrency = 'BGN';
+function setCurrency(currency) {
+  currentCurrency = currency;
+  document.getElementById('btnBGN').classList.toggle('active', currency === 'BGN');
+  document.getElementById('btnEUR').classList.toggle('active', currency === 'EUR');
+  document.querySelectorAll('.price-bgn').forEach(el => {
+    el.style.display = currency === 'BGN' ? 'block' : 'none';
+  });
+  document.querySelectorAll('.price-eur').forEach(el => {
+    el.style.fontWeight = currency === 'EUR' ? '600' : '400';
+    el.style.fontSize = currency === 'EUR' ? '1.2rem' : '1.1rem';
+  });
+}
+
+// Booking form
+function submitBooking() {
+  const name = document.getElementById('clientName').value.trim();
+  const phone = document.getElementById('clientPhone').value.trim();
+  const service = document.getElementById('service').value;
+  if (!name || !phone || !service) {
+    alert('Моля, попълнете: Вашето ime, телефон и услуга.');
+    return;
+  }
+  document.getElementById('bookingFormInner').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+
+  // In production: send to API here
+  // fetch('/api/create-booking', { method: 'POST', body: JSON.stringify({...}) })
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.boxShadow = window.scrollY > 40 ? '0 4px 24px rgba(0,0,0,0.08)' : 'none';
+});
+</script>
+
+</body>
+</html>
