@@ -3,163 +3,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nails Room – Маникюр & Нокти | Бургас</title>
-<meta name="description" content="Nails Room – Румяна, професионален маникюрист с над 6 години опит в Бургас. Запазете своя час онлайн.">
+<title>Nails Room – Маникюр | Бургас</title>
+<meta name="description" content="Nails Room – Румяна, маникюрист с над 6 години опит в Бургас. Запазете час онлайн.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--teal:#1A8A75;--teal-lt:#22B090;--teal-dk:#136859;--gold:#C9A84C;--gold-lt:#E8C96A;--cream:#FAF8F4;--sand:#F2EDE4;--dark:#162520;--muted:#5A6B66;--white:#FFFFFF;--font-display:'Cormorant Garamond',serif;--font-body:'Jost',sans-serif;--transition:0.4s cubic-bezier(0.4,0,0.2,1);}
+:root{--teal:#1A8A75;--teal-lt:#22B090;--teal-dk:#136859;--gold:#C9A84C;--gold-lt:#E8C96A;--cream:#FAF8F4;--sand:#F2EDE4;--dark:#162520;--muted:#5A6B66;--white:#fff;--fd:'Cormorant Garamond',serif;--fb:'Jost',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--font-body);background:var(--cream);color:var(--dark);line-height:1.6;overflow-x:hidden;}
+body{font-family:var(--fb);background:var(--cream);color:var(--dark);overflow-x:hidden;}
 img{display:block;width:100%;height:100%;object-fit:cover;}
 a{color:inherit;text-decoration:none;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(250,248,244,0.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(26,138,117,0.15);transition:var(--transition);}
-.nav-logo{font-family:var(--font-display);font-size:1.7rem;font-weight:600;letter-spacing:0.05em;color:var(--teal);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(250,248,244,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,138,117,0.15);}
+.nav-logo{font-family:var(--fd);font-size:1.7rem;font-weight:600;color:var(--teal);}
 .nav-logo span{color:var(--gold);}
 .nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.3s;}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color .3s;}
 .nav-links a:hover{color:var(--teal);}
-.nav-cta{background:var(--teal);color:var(--white)!important;padding:10px 26px;font-size:0.75rem!important;letter-spacing:0.15em!important;transition:background 0.3s!important;}
+.nav-cta{background:var(--teal)!important;color:var(--white)!important;padding:10px 26px;}
 .nav-cta:hover{background:var(--teal-lt)!important;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--teal);}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:44px;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:var(--font-display);font-size:2.4rem;font-weight:300;color:var(--teal);}
+.mobile-menu a{font-family:var(--fd);font-size:2.4rem;font-weight:300;color:var(--teal);}
 .mobile-close{position:absolute;top:22px;right:30px;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--teal);}
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:76px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:60vw;height:80vh;background:radial-gradient(ellipse,rgba(26,138,117,0.10) 0%,transparent 70%);pointer-events:none;}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:76px;overflow:hidden;}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:60px 60px 60px 80px;}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:28px;}
 .hero-tag::before{content:'';display:block;width:36px;height:1.5px;background:var(--teal);}
-.hero h1{font-family:var(--font-display);font-size:clamp(3rem,5vw,5.5rem);font-weight:300;line-height:1.1;color:var(--dark);margin-bottom:24px;}
+.hero h1{font-family:var(--fd);font-size:clamp(3rem,5vw,5.5rem);font-weight:300;line-height:1.1;margin-bottom:24px;}
 .hero h1 em{font-style:italic;color:var(--teal);}
 .hero-sub{font-size:1rem;color:var(--muted);max-width:390px;margin-bottom:44px;font-weight:300;line-height:1.9;}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
-.btn-primary{background:var(--teal);color:var(--white);padding:16px 38px;font-family:var(--font-body);font-size:0.78rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;border:none;cursor:pointer;transition:var(--transition);display:inline-block;}
-.btn-primary:hover{background:var(--teal-lt);transform:translateY(-2px);box-shadow:0 8px 28px rgba(26,138,117,0.3);}
-.btn-outline{background:transparent;color:var(--teal);padding:16px 38px;font-family:var(--font-body);font-size:0.78rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;border:1.5px solid var(--teal);cursor:pointer;transition:var(--transition);display:inline-block;}
+.btn-primary{background:var(--teal);color:var(--white);padding:16px 38px;font-family:var(--fb);font-size:0.78rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;border:none;cursor:pointer;display:inline-block;transition:all .3s;}
+.btn-primary:hover{background:var(--teal-lt);transform:translateY(-2px);box-shadow:0 8px 28px rgba(26,138,117,.3);}
+.btn-outline{background:transparent;color:var(--teal);padding:16px 38px;font-family:var(--fb);font-size:0.78rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;border:1.5px solid var(--teal);cursor:pointer;display:inline-block;transition:all .3s;}
 .btn-outline:hover{background:var(--teal);color:var(--white);}
-.hero-right{position:relative;overflow:hidden;}
-.hero-img-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;height:100%;gap:4px;padding:4px;}
-.hero-img-grid div{overflow:hidden;}
-.hero-img-grid div img{transition:transform 0.8s ease;}
-.hero-img-grid div:hover img{transform:scale(1.05);}
-.hero-img-grid div:nth-child(1){grid-row:span 2;}
-.section-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
-.section-label::after{content:'';display:block;width:40px;height:1.5px;background:var(--teal);}
-.about{background:var(--sand);padding:110px 80px;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;position:relative;overflow:hidden;}
-.about::after{content:'NR';position:absolute;right:30px;bottom:10px;font-family:var(--font-display);font-size:14rem;font-weight:300;color:rgba(26,138,117,0.05);line-height:1;pointer-events:none;user-select:none;}
-.about h2{font-family:var(--font-display);font-size:clamp(2.2rem,3.5vw,3.6rem);font-weight:300;line-height:1.15;margin-bottom:24px;}
+.hero-right{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;padding:4px;}
+.hero-right div{overflow:hidden;}
+.hero-right div img{transition:transform .8s;}
+.hero-right div:hover img{transform:scale(1.05);}
+.hero-right div:nth-child(1){grid-row:span 2;}
+
+/* LABELS */
+.lbl{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.lbl::after{content:'';display:block;width:40px;height:1.5px;background:var(--teal);}
+
+/* ABOUT */
+.about{background:var(--sand);padding:110px 80px;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;}
+.about h2{font-family:var(--fd);font-size:clamp(2.2rem,3.5vw,3.6rem);font-weight:300;line-height:1.15;margin-bottom:24px;}
 .about h2 em{font-style:italic;color:var(--teal);}
 .about p{color:var(--muted);font-weight:300;line-height:1.95;margin-bottom:16px;}
-.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;}
 .stat{border-top:2px solid var(--teal);padding-top:16px;}
-.stat-num{font-family:var(--font-display);font-size:2.6rem;font-weight:300;color:var(--teal);line-height:1;}
-.stat-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+.stat-n{font-family:var(--fd);font-size:2.6rem;font-weight:300;color:var(--teal);line-height:1;}
+.stat-l{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
 .about-img{position:relative;}
-.about-img-main{aspect-ratio:3/4;overflow:hidden;border:5px solid var(--white);box-shadow:24px 24px 70px rgba(0,0,0,0.13);}
-.about-img-badge{position:absolute;bottom:-20px;left:-20px;background:var(--teal);color:var(--white);padding:22px 28px;font-family:var(--font-display);font-size:1.05rem;font-style:italic;max-width:210px;box-shadow:0 8px 32px rgba(26,138,117,0.35);line-height:1.4;}
-.about-img-badge strong{display:block;font-style:normal;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;margin-bottom:4px;}
+.about-img-main{aspect-ratio:3/4;overflow:hidden;border:5px solid var(--white);box-shadow:24px 24px 70px rgba(0,0,0,.13);}
+.about-badge{position:absolute;bottom:-20px;left:-20px;background:var(--teal);color:var(--white);padding:22px 28px;font-family:var(--fd);font-size:1.05rem;font-style:italic;max-width:210px;box-shadow:0 8px 32px rgba(26,138,117,.35);line-height:1.4;}
+.about-badge strong{display:block;font-style:normal;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:4px;}
+
+/* SERVICES */
 .services{padding:110px 80px;background:var(--cream);}
-.services-header{text-align:center;margin-bottom:70px;}
-.services-header .section-label{justify-content:center;}
-.services-header h2{font-family:var(--font-display);font-size:clamp(2.4rem,4vw,4rem);font-weight:300;margin-top:12px;}
-.services-header h2 em{font-style:italic;color:var(--teal);}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;background:rgba(26,138,117,0.12);border:1px solid rgba(26,138,117,0.15);}
-.service-cat{background:var(--cream);padding:42px 36px;transition:var(--transition);}
-.service-cat:hover{background:var(--sand);transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,0.09);z-index:1;position:relative;}
-.service-cat-icon{width:44px;height:2px;background:var(--teal);margin-bottom:20px;}
-.service-cat h3{font-family:var(--font-display);font-size:1.55rem;font-weight:400;color:var(--teal);margin-bottom:24px;}
-.service-item{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px dashed rgba(26,138,117,0.2);gap:12px;}
-.service-item:last-child{border-bottom:none;}
-.service-name{font-size:0.9rem;font-weight:300;color:var(--dark);flex:1;}
-.service-prices{display:flex;flex-direction:column;align-items:flex-end;gap:2px;}
-.price-bgn{font-size:0.75rem;color:var(--muted);font-weight:300;}
-.price-eur{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--teal);white-space:nowrap;}
-.currency-note{text-align:center;margin-top:28px;font-size:0.72rem;letter-spacing:0.08em;color:var(--muted);}
+.services-hdr{text-align:center;margin-bottom:70px;}
+.services-hdr .lbl{justify-content:center;}
+.services-hdr h2{font-family:var(--fd);font-size:clamp(2.4rem,4vw,4rem);font-weight:300;margin-top:12px;}
+.services-hdr h2 em{font-style:italic;color:var(--teal);}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;background:rgba(26,138,117,.12);border:1px solid rgba(26,138,117,.15);}
+.sc{background:var(--cream);padding:42px 36px;transition:all .3s;}
+.sc:hover{background:var(--sand);transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,.09);z-index:1;position:relative;}
+.sci{width:44px;height:2px;background:var(--teal);margin-bottom:20px;}
+.sc h3{font-family:var(--fd);font-size:1.55rem;font-weight:400;color:var(--teal);margin-bottom:24px;}
+.si{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px dashed rgba(26,138,117,.2);gap:12px;}
+.si:last-child{border-bottom:none;}
+.sn{font-size:.9rem;font-weight:300;color:var(--dark);flex:1;}
+.sp{display:flex;flex-direction:column;align-items:flex-end;gap:2px;}
+.pb{font-size:.75rem;color:var(--muted);font-weight:300;}
+.pe{font-family:var(--fd);font-size:1.15rem;font-weight:600;color:var(--teal);white-space:nowrap;}
+.cn{text-align:center;margin-top:28px;font-size:.72rem;letter-spacing:.08em;color:var(--muted);}
+.ctog{display:inline-flex;border:1.5px solid var(--teal);border-radius:2px;overflow:hidden;margin-left:16px;vertical-align:middle;}
+.ctog button{background:none;border:none;padding:5px 13px;font-family:var(--fb);font-size:.72rem;cursor:pointer;color:var(--muted);transition:all .25s;}
+.ctog button.active{background:var(--teal);color:var(--white);}
+
+/* GALLERY */
 .gallery{padding:110px 80px;background:var(--dark);}
-.gallery-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;}
-.gallery-header .section-label{color:var(--teal-lt);}
-.gallery-header .section-label::after{background:var(--teal-lt);}
-.gallery-header h2{font-family:var(--font-display);font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;color:var(--white);}
-.gallery-header h2 em{font-style:italic;color:var(--teal-lt);}
-.gallery-fb a{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-lt);border-bottom:1px solid rgba(34,176,144,0.4);padding-bottom:2px;transition:color 0.3s;}
+.gallery-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;}
+.gallery-hdr .lbl{color:var(--teal-lt);}
+.gallery-hdr .lbl::after{background:var(--teal-lt);}
+.gallery-hdr h2{font-family:var(--fd);font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;color:var(--white);}
+.gallery-hdr h2 em{font-style:italic;color:var(--teal-lt);}
+.gallery-fb a{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-lt);border-bottom:1px solid rgba(34,176,144,.4);padding-bottom:2px;}
 .gallery-fb a:hover{color:var(--white);}
-.gallery-masonry{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:220px 220px;gap:4px;}
-.gallery-item{overflow:hidden;cursor:pointer;position:relative;}
-.gallery-item::after{content:'';position:absolute;inset:0;background:rgba(26,138,117,0);transition:var(--transition);}
-.gallery-item:hover::after{background:rgba(26,138,117,0.38);}
-.gallery-item img{transition:transform 0.7s ease;}
-.gallery-item:hover img{transform:scale(1.08);}
-.gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
-.gallery-item:nth-child(4){grid-column:span 2;}
+.gm{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:220px 220px;gap:4px;}
+.gi{overflow:hidden;cursor:pointer;position:relative;}
+.gi::after{content:'';position:absolute;inset:0;background:rgba(26,138,117,0);transition:all .4s;}
+.gi:hover::after{background:rgba(26,138,117,.38);}
+.gi img{transition:transform .7s;}
+.gi:hover img{transform:scale(1.08);}
+.gi:nth-child(1){grid-column:span 2;grid-row:span 2;}
+.gi:nth-child(4){grid-column:span 2;}
+
+/* BOOKING */
 .booking{padding:110px 80px;background:var(--sand);display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;}
-.booking-info h2{font-family:var(--font-display);font-size:clamp(2.2rem,3vw,3.3rem);font-weight:300;line-height:1.2;margin-bottom:24px;}
+.booking-info h2{font-family:var(--fd);font-size:clamp(2.2rem,3vw,3.3rem);font-weight:300;line-height:1.2;margin-bottom:24px;}
 .booking-info h2 em{font-style:italic;color:var(--teal);}
 .booking-info p{color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:32px;}
-.booking-details{display:flex;flex-direction:column;gap:16px;}
-.booking-detail{display:flex;align-items:center;gap:14px;font-size:0.88rem;color:var(--dark);}
-.booking-detail-icon{width:38px;height:38px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.booking-detail-icon svg{width:16px;height:16px;fill:none;stroke:white;stroke-width:1.8;}
-.booking-form{background:var(--white);padding:52px;box-shadow:0 20px 60px rgba(0,0,0,0.08);border-top:3px solid var(--teal);}
-.booking-form h3{font-family:var(--font-display);font-size:1.9rem;font-weight:400;color:var(--teal);margin-bottom:32px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
-.form-group label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);font-weight:500;}
-.form-group input,.form-group select,.form-group textarea{border:1px solid #C8E8E0;background:var(--cream);padding:13px 16px;font-family:var(--font-body);font-size:0.9rem;color:var(--dark);outline:none;transition:border-color 0.3s;width:100%;-webkit-appearance:none;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal);}
-.form-group textarea{height:100px;resize:none;}
-.form-submit{width:100%;background:var(--teal);color:var(--white);padding:17px;font-family:var(--font-body);font-size:0.8rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;border:none;cursor:pointer;transition:var(--transition);margin-top:8px;}
-.form-submit:hover{background:var(--teal-lt);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,138,117,0.35);}
-.form-success{display:none;text-align:center;padding:40px 20px;}
-.form-success.show{display:block;}
-.form-success .checkmark{width:64px;height:64px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
-.form-success .checkmark svg{width:28px;height:28px;fill:none;stroke:white;stroke-width:2.5;}
-.form-success h4{font-family:var(--font-display);font-size:1.9rem;color:var(--teal);margin-bottom:8px;}
-.form-success p{color:var(--muted);font-size:0.9rem;}
-.contact{padding:0;background:var(--teal-dk);display:grid;grid-template-columns:1fr 1fr;min-height:500px;}
-.contact-map{position:relative;overflow:hidden;}
-.contact-map img{width:100%;height:100%;object-fit:cover;object-position:center;}
-.contact-map-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(19,104,89,0.4) 0%,transparent 60%);}
+.bds{display:flex;flex-direction:column;gap:16px;}
+.bd{display:flex;align-items:center;gap:14px;font-size:.88rem;}
+.bd-icon{width:38px;height:38px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bd-icon svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.8;}
+.bf{background:var(--white);padding:52px;box-shadow:0 20px 60px rgba(0,0,0,.08);border-top:3px solid var(--teal);}
+.bf h3{font-family:var(--fd);font-size:1.9rem;font-weight:400;color:var(--teal);margin-bottom:32px;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.fg label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+.fg input,.fg select,.fg textarea{border:1px solid #C8E8E0;background:var(--cream);padding:13px 16px;font-family:var(--fb);font-size:.9rem;color:var(--dark);outline:none;transition:border-color .3s;width:100%;-webkit-appearance:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);}
+.fg textarea{height:100px;resize:none;}
+.fs-btn{width:100%;background:var(--teal);color:var(--white);padding:17px;font-family:var(--fb);font-size:.8rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;margin-top:8px;}
+.fs-btn:hover{background:var(--teal-lt);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,138,117,.35);}
+.success{display:none;text-align:center;padding:40px 20px;}
+.success.show{display:block;}
+.success .ck{width:64px;height:64px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.success .ck svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2.5;}
+.success h4{font-family:var(--fd);font-size:1.9rem;color:var(--teal);margin-bottom:8px;}
+.success p{color:var(--muted);font-size:.9rem;}
+
+/* CONTACT */
+.contact{background:var(--teal-dk);display:grid;grid-template-columns:1fr 1fr;min-height:500px;}
+.contact-map{position:relative;}
+.contact-map iframe{width:100%;height:100%;border:0;min-height:500px;display:block;}
 .contact-info{padding:70px 64px;display:flex;flex-direction:column;justify-content:center;}
-.contact-logo{font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:6px;}
+.contact-logo{font-family:var(--fd);font-size:3rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:6px;}
 .contact-logo span{color:var(--gold);}
-.contact-tagline{font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:44px;}
-.contact-block{margin-bottom:26px;}
-.contact-block h4{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:10px;}
-.contact-block p,.contact-block a{color:rgba(255,255,255,0.85);font-size:0.92rem;font-weight:300;line-height:1.85;}
-.contact-block a:hover{color:var(--white);text-decoration:underline;}
-.contact-social{display:flex;gap:12px;margin-top:36px;}
-.contact-social a{width:40px;height:40px;border:1.5px solid rgba(255,255,255,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:var(--transition);color:rgba(255,255,255,0.7)!important;}
-.contact-social a:hover{border-color:var(--gold);color:var(--gold)!important;}
-.contact-social svg{width:16px;height:16px;fill:currentColor;}
+.contact-tagline{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:44px;}
+.cb{margin-bottom:26px;}
+.cb h4{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:10px;}
+.cb p,.cb a{color:rgba(255,255,255,.85);font-size:.92rem;font-weight:300;line-height:1.85;}
+.cb a:hover{color:#fff;text-decoration:underline;}
+.csoc{display:flex;gap:12px;margin-top:36px;}
+.csoc a{width:40px;height:40px;border:1.5px solid rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;color:rgba(255,255,255,.7)!important;}
+.csoc a:hover{border-color:var(--gold);color:var(--gold)!important;}
+.csoc svg{width:16px;height:16px;fill:currentColor;}
+
 footer{background:#0A1A15;padding:22px 80px;display:flex;justify-content:space-between;align-items:center;}
-footer p{font-size:0.72rem;color:rgba(255,255,255,0.28);letter-spacing:0.08em;}
-.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease;}
+footer p{font-size:.72rem;color:rgba(255,255,255,.28);letter-spacing:.08em;}
+
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-.currency-toggle{display:inline-flex;border:1.5px solid var(--teal);border-radius:2px;overflow:hidden;margin-left:16px;vertical-align:middle;}
-.currency-toggle button{background:none;border:none;padding:5px 13px;font-family:var(--font-body);font-size:0.72rem;cursor:pointer;color:var(--muted);transition:all 0.25s;}
-.currency-toggle button.active{background:var(--teal);color:var(--white);}
+
 @media(max-width:1100px){
   nav{padding:16px 28px;} .nav-links{display:none;} .hamburger{display:flex;}
-  .hero{grid-template-columns:1fr;min-height:auto;} .hero-left{padding:56px 28px 40px;} .hero-right{height:56vw;max-height:420px;}
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:56px 28px 40px;}
+  .hero-right{height:56vw;max-height:420px;}
   .about{grid-template-columns:1fr;padding:70px 28px;gap:44px;} .about-img{display:none;}
-  .services{padding:70px 28px;} .gallery{padding:70px 28px;}
-  .gallery-masonry{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,180px);}
-  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2;} .gallery-item:nth-child(4){grid-column:span 1;}
-  .gallery-header{flex-direction:column;align-items:flex-start;gap:16px;}
-  .booking{grid-template-columns:1fr;padding:70px 28px;gap:40px;} .booking-form{padding:32px;}
-  .contact{grid-template-columns:1fr;} .contact-map{min-height:300px;} .contact-info{padding:50px 28px;}
+  .services{padding:70px 28px;}
+  .gallery{padding:70px 28px;}
+  .gm{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,180px);}
+  .gi:nth-child(1){grid-column:span 2;grid-row:span 2;} .gi:nth-child(4){grid-column:span 1;}
+  .gallery-hdr{flex-direction:column;align-items:flex-start;gap:16px;}
+  .booking{grid-template-columns:1fr;padding:70px 28px;gap:40px;} .bf{padding:32px;}
+  .contact{grid-template-columns:1fr;}
+  .contact-map iframe{min-height:300px;}
+  .contact-info{padding:50px 28px;}
   footer{flex-direction:column;gap:8px;padding:20px 28px;}
 }
 @media(max-width:640px){
   .hero h1{font-size:2.8rem;}
-  .hero-img-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,110px);}
-  .hero-img-grid div:nth-child(1){grid-row:span 2;}
-  .form-row{grid-template-columns:1fr;}
-  .gallery-masonry{grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,150px);}
+  .hero-right{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,110px);}
+  .hero-right div:nth-child(1){grid-row:span 2;}
+  .fr{grid-template-columns:1fr;}
+  .gm{grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,150px);}
 }
 </style>
 </head>
@@ -184,9 +204,10 @@ footer p{font-size:0.72rem;color:rgba(255,255,255,0.28);letter-spacing:0.08em;}
   <a href="#booking" onclick="closeMenu()" style="color:var(--gold)">Запази час</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">Бургас · Маникюр & Нокти</div>
+    <div class="hero-tag">Бургас · Маникюр &amp; Нокти</div>
     <h1>Красотата<br>е в <em>детайлите</em></h1>
     <p class="hero-sub">Добре дошли в Nails Room — студио за маникюр с уютна атмосфера, внимание към всеки детайл и любов към занаята.</p>
     <div class="hero-btns">
@@ -195,83 +216,77 @@ footer p{font-size:0.72rem;color:rgba(255,255,255,0.28);letter-spacing:0.08em;}
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-img-grid">
-      <div><img src="rumyana.jpg" alt="Румяна — Nails Room" loading="eager"></div>
-      <div><img src="5.jpg" alt="Гел нокти" loading="eager"></div>
-      <div><img src="6.jpg" alt="Маникюр" loading="eager"></div>
-    </div>
+    <div><img src="rumyana.jpg" alt="Румяна — Nails Room"></div>
+    <div><img src="5.jpg" alt="Гел нокти"></div>
+    <div><img src="6.jpg" alt="Маникюр"></div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="reveal">
-    <div class="section-label">За Румяна</div>
+    <div class="lbl">За Румяна</div>
     <h2>Майстор на<br><em>нокътното изкуство</em></h2>
     <p>Зад Nails Room стои Румяна — маникюрист с над 6 години опит и страст към перфекцията. Тя работи сама в студиото, което означава едно: пълно внимание и отдаденост към всяка клиентка.</p>
     <p>Румяна вярва, че маникюрът не е просто услуга — той е ритуал. Затова в студиото цари спокойна, отпускаща атмосфера, в която се чувствате специална от момента, в който влезете.</p>
     <p>Качеството на материалите, прецизната хигиена и грижата за здравето на вашите нокти са в основата на всяка процедура.</p>
-    <div class="about-stats">
-      <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Години опит</div></div>
-      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Доволни клиентки</div></div>
-      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Лично внимание</div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Години опит</div></div>
+      <div class="stat"><div class="stat-n">500+</div><div class="stat-l">Доволни клиентки</div></div>
+      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Лично внимание</div></div>
     </div>
   </div>
   <div class="about-img reveal">
-    <div class="about-img-main"><img src="rumyana.jpg" alt="Румяна — маникюрист Nails Room Бургас" loading="lazy"></div>
-    <div class="about-img-badge"><strong>Румяна</strong>Маникюрист & основател на Nails Room</div>
+    <div class="about-img-main"><img src="rumyana.jpg" alt="Румяна — маникюрист Nails Room"></div>
+    <div class="about-badge"><strong>Румяна</strong>Маникюрист &amp; основател на Nails Room</div>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services" id="services">
-  <div class="services-header reveal">
-    <div class="section-label">Ценоразпис</div>
+  <div class="services-hdr reveal">
+    <div class="lbl">Ценоразпис</div>
     <h2>Нашите <em>услуги</em>
-      <span class="currency-toggle">
+      <span class="ctog">
         <button class="active" id="btnBGN" onclick="setCurrency('BGN')">лв</button>
         <button id="btnEUR" onclick="setCurrency('EUR')">€</button>
       </span>
     </h2>
   </div>
-  <div class="services-grid reveal">
-    <div class="service-cat">
-      <div class="service-cat-icon"></div>
-      <h3>Маникюр</h3>
-      <div class="service-item"><span class="service-name">Маникюр без покритие</span><div class="service-prices"><span class="price-bgn">25 лв</span><span class="price-eur">13 €</span></div></div>
-      <div class="service-item"><span class="service-name">Гел лак — къси нокти</span><div class="service-prices"><span class="price-bgn">40 лв</span><span class="price-eur">20 €</span></div></div>
-      <div class="service-item"><span class="service-name">Гел лак — дълги нокти</span><div class="service-prices"><span class="price-bgn">45 лв</span><span class="price-eur">23 €</span></div></div>
-      <div class="service-item"><span class="service-name">Гел + Гел лак — къси</span><div class="service-prices"><span class="price-bgn">55 лв</span><span class="price-eur">28 €</span></div></div>
-      <div class="service-item"><span class="service-name">Гел + Гел лак — дълги</span><div class="service-prices"><span class="price-bgn">60 лв</span><span class="price-eur">31 €</span></div></div>
+  <div class="sg reveal">
+    <div class="sc">
+      <div class="sci"></div><h3>Маникюр</h3>
+      <div class="si"><span class="sn">Маникюр без покритие</span><div class="sp"><span class="pb">25 лв</span><span class="pe">13 €</span></div></div>
+      <div class="si"><span class="sn">Гел лак — къси нокти</span><div class="sp"><span class="pb">40 лв</span><span class="pe">20 €</span></div></div>
+      <div class="si"><span class="sn">Гел лак — дълги нокти</span><div class="sp"><span class="pb">45 лв</span><span class="pe">23 €</span></div></div>
+      <div class="si"><span class="sn">Гел + Гел лак — къси</span><div class="sp"><span class="pb">55 лв</span><span class="pe">28 €</span></div></div>
+      <div class="si"><span class="sn">Гел + Гел лак — дълги</span><div class="sp"><span class="pb">60 лв</span><span class="pe">31 €</span></div></div>
     </div>
-    <div class="service-cat">
-      <div class="service-cat-icon"></div>
-      <h3>Ноктопластика</h3>
-      <div class="service-item"><span class="service-name">Изграждане с гел</span><div class="service-prices"><span class="price-bgn">90–100 лв</span><span class="price-eur">46–51 €</span></div></div>
-      <div class="service-item"><span class="service-name">Изграждане вграден френски</span><div class="service-prices"><span class="price-bgn">120 лв</span><span class="price-eur">61 €</span></div></div>
-      <div class="service-item"><span class="service-name">Изграждане счупен нокът</span><div class="service-prices"><span class="price-bgn">5 лв</span><span class="price-eur">3 €</span></div></div>
-      <div class="service-item"><span class="service-name">Поправка счупен нокът</span><div class="service-prices"><span class="price-bgn">3 лв</span><span class="price-eur">2 €</span></div></div>
+    <div class="sc">
+      <div class="sci"></div><h3>Ноктопластика</h3>
+      <div class="si"><span class="sn">Изграждане с гел</span><div class="sp"><span class="pb">90–100 лв</span><span class="pe">46–51 €</span></div></div>
+      <div class="si"><span class="sn">Изграждане вграден френски</span><div class="sp"><span class="pb">120 лв</span><span class="pe">61 €</span></div></div>
+      <div class="si"><span class="sn">Изграждане счупен нокът</span><div class="sp"><span class="pb">5 лв</span><span class="pe">3 €</span></div></div>
+      <div class="si"><span class="sn">Поправка счупен нокът</span><div class="sp"><span class="pb">3 лв</span><span class="pe">2 €</span></div></div>
     </div>
-    <div class="service-cat">
-      <div class="service-cat-icon"></div>
-      <h3>Декорация</h3>
-      <div class="service-item"><span class="service-name">Френски маникюр</span><div class="service-prices"><span class="price-bgn">5 лв</span><span class="price-eur">3 €</span></div></div>
-      <div class="service-item"><span class="service-name">Камъчета, стикери</span><div class="service-prices"><span class="price-bgn">5 лв</span><span class="price-eur">3 €</span></div></div>
+    <div class="sc">
+      <div class="sci"></div><h3>Декорация</h3>
+      <div class="si"><span class="sn">Френски маникюр</span><div class="sp"><span class="pb">5 лв</span><span class="pe">3 €</span></div></div>
+      <div class="si"><span class="sn">Камъчета, стикери</span><div class="sp"><span class="pb">5 лв</span><span class="pe">3 €</span></div></div>
       <div style="margin-top:32px">
-        <div class="service-cat-icon"></div>
-        <h3>Терапии</h3>
-        <div class="service-item"><span class="service-name">Парафинова терапия</span><div class="service-prices"><span class="price-bgn">20 лв</span><span class="price-eur">10 €</span></div></div>
-        <div class="service-item"><span class="service-name">IBX терапия</span><div class="service-prices"><span class="price-bgn">25 лв</span><span class="price-eur">13 €</span></div></div>
+        <div class="sci"></div><h3>Терапии</h3>
+        <div class="si"><span class="sn">Парафинова терапия</span><div class="sp"><span class="pb">20 лв</span><span class="pe">10 €</span></div></div>
+        <div class="si"><span class="sn">IBX терапия</span><div class="sp"><span class="pb">25 лв</span><span class="pe">13 €</span></div></div>
       </div>
     </div>
   </div>
-  <p class="currency-note">* Курс: 1 лв = 0.51 € (фиксиран БНБ курс). Цените са ориентировъчни.</p>
+  <p class="cn">* Курс: 1 лв = 0.51 € (фиксиран БНБ курс)</p>
 </section>
 
+<!-- GALLERY -->
 <section class="gallery" id="gallery">
-  <div class="gallery-header">
-    <div>
-      <div class="section-label">Портфолио</div>
-      <h2>Работата на <em>Румяна</em></h2>
-    </div>
+  <div class="gallery-hdr">
+    <div><div class="lbl">Портфолио</div><h2>Работата на <em>Румяна</em></h2></div>
     <div class="gallery-fb">
       <a href="https://www.facebook.com/Ruminailsroom" target="_blank" rel="noopener">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -279,51 +294,43 @@ footer p{font-size:0.72rem;color:rgba(255,255,255,0.28);letter-spacing:0.08em;}
       </a>
     </div>
   </div>
-  <div class="gallery-masonry reveal">
-    <div class="gallery-item"><img src="11.jpg" alt="Маникюр" loading="lazy"></div>
-    <div class="gallery-item"><img src="3.jpg" alt="Гел нокти" loading="lazy"></div>
-    <div class="gallery-item"><img src="4.jpg" alt="Ноктопластика" loading="lazy"></div>
-    <div class="gallery-item"><img src="7.jpg" alt="Дизайн нокти" loading="lazy"></div>
-    <div class="gallery-item"><img src="5.jpg" alt="Маникюр" loading="lazy"></div>
-    <div class="gallery-item"><img src="8.jpg" alt="Гел лак" loading="lazy"></div>
-    <div class="gallery-item"><img src="9.jpg" alt="Нокти дизайн" loading="lazy"></div>
-    <div class="gallery-item"><img src="10.jpg" alt="Маникюр Бургас" loading="lazy"></div>
-    <div class="gallery-item"><img src="6.jpg" alt="Нокти" loading="lazy"></div>
-    <div class="gallery-item"><img src="12.jpg" alt="Студио" loading="lazy"></div>
+  <div class="gm reveal">
+    <div class="gi"><img src="11.jpg" alt="Маникюр" loading="lazy"></div>
+    <div class="gi"><img src="3.jpg" alt="Гел нокти" loading="lazy"></div>
+    <div class="gi"><img src="4.jpg" alt="Ноктопластика" loading="lazy"></div>
+    <div class="gi"><img src="7.jpg" alt="Дизайн нокти" loading="lazy"></div>
+    <div class="gi"><img src="5.jpg" alt="Маникюр" loading="lazy"></div>
+    <div class="gi"><img src="8.jpg" alt="Гел лак" loading="lazy"></div>
+    <div class="gi"><img src="9.jpg" alt="Нокти дизайн" loading="lazy"></div>
+    <div class="gi"><img src="10.jpg" alt="Маникюр Бургас" loading="lazy"></div>
+    <div class="gi"><img src="6.jpg" alt="Нокти" loading="lazy"></div>
+    <div class="gi"><img src="12.jpg" alt="Студио" loading="lazy"></div>
   </div>
 </section>
 
+<!-- BOOKING -->
 <section class="booking" id="booking">
   <div class="booking-info reveal">
-    <div class="section-label">Онлайн резервация</div>
+    <div class="lbl">Онлайн резервация</div>
     <h2>Запазете<br>своя <em>час</em></h2>
     <p>Попълнете формата и Румяна ще се свърже с вас за потвърждение. Всеки час е с пълно внимание — само за вас.</p>
-    <div class="booking-details">
-      <div class="booking-detail">
-        <div class="booking-detail-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <span>ул. „Цар Калоян" 63, гр. Бургас</span>
-      </div>
-      <div class="booking-detail">
-        <div class="booking-detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <a href="tel:+359894714546">+359 894 714 546</a>
-      </div>
-      <div class="booking-detail">
-        <div class="booking-detail-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <span>Пон–Пет: 09:00–19:00 &nbsp;|&nbsp; Съб: 09:00–16:00</span>
-      </div>
+    <div class="bds">
+      <div class="bd"><div class="bd-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span>ул. „Цар Калоян" 63, гр. Бургас</span></div>
+      <div class="bd"><div class="bd-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><a href="tel:+359894714546">+359 894 714 546</a></div>
+      <div class="bd"><div class="bd-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span>Пон–Пет: 09:00–19:00 | Съб: 09:00–16:00</span></div>
     </div>
   </div>
-  <div class="booking-form reveal">
+  <div class="bf reveal">
     <h3>Нова резервация</h3>
-    <div id="bookingFormInner">
-      <div class="form-row">
-        <div class="form-group"><label>Вашето ime</label><input type="text" id="clientName" placeholder="Мария Иванова" required></div>
-        <div class="form-group"><label>Телефон</label><input type="tel" id="clientPhone" placeholder="+359 8XX XXX XXX" required></div>
+    <div id="formInner">
+      <div class="fr">
+        <div class="fg"><label>Вашето ime</label><input type="text" id="cName" placeholder="Мария Иванова" required></div>
+        <div class="fg"><label>Телефон</label><input type="tel" id="cPhone" placeholder="+359 8XX XXX XXX" required></div>
       </div>
-      <div class="form-group"><label>Имейл (по желание)</label><input type="email" id="clientEmail" placeholder="maria@example.com"></div>
-      <div class="form-group">
+      <div class="fg"><label>Имейл (по желание)</label><input type="email" id="cEmail" placeholder="maria@example.com"></div>
+      <div class="fg">
         <label>Услуга</label>
-        <select id="service">
+        <select id="svc">
           <option value="">— Изберете услуга —</option>
           <optgroup label="Маникюр">
             <option>Маникюр без покритие — 25 лв</option>
@@ -348,11 +355,11 @@ footer p{font-size:0.72rem;color:rgba(255,255,255,0.28);letter-spacing:0.08em;}
           </optgroup>
         </select>
       </div>
-      <div class="form-row">
-        <div class="form-group"><label>Желана дата</label><input type="date" id="bookDate" min=""></div>
-        <div class="form-group">
+      <div class="fr">
+        <div class="fg"><label>Желана дата</label><input type="date" id="bDate" min=""></div>
+        <div class="fg">
           <label>Предпочитан час</label>
-          <select id="bookTime">
+          <select id="bTime">
             <option value="">— Час —</option>
             <option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option>
             <option>11:00</option><option>11:30</option><option>12:00</option><option>12:30</option>
@@ -362,40 +369,36 @@ footer p{font-size:0.72rem;color:rgba(255,255,255,0.28);letter-spacing:0.08em;}
           </select>
         </div>
       </div>
-      <div class="form-group"><label>Бележка (по желание)</label><textarea id="note" placeholder="Специални желания, алергии, предпочитания..."></textarea></div>
-      <button class="form-submit" onclick="submitBooking()">Изпрати заявката →</button>
+      <div class="fg"><label>Бележка (по желание)</label><textarea id="note" placeholder="Специални желания, алергии..."></textarea></div>
+      <button class="fs-btn" onclick="submitForm()">Изпрати заявката →</button>
     </div>
-    <div class="form-success" id="formSuccess">
-      <div class="checkmark"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="success" id="formSuccess">
+      <div class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h4>Заявката е изпратена!</h4>
-      <p>Румяна ще се свърже с вас до 2 часа за потвърждение.<br>Очакваме ви в Nails Room! 💅</p>
+      <p>Румяна ще се свърже с вас до 2 часа.<br>Очакваме ви в Nails Room! 💅</p>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-map">
-    <img src="salon.jpg" alt="Nails Room — ул. Цар Калоян 63, Бургас" loading="lazy">
-    <div class="contact-map-overlay"></div>
+    <iframe
+      src="https://maps.google.com/maps?q=%D1%83%D0%BB.+%D0%A6%D0%B0%D1%80+%D0%9A%D0%B0%D0%BB%D0%BE%D1%8F%D0%BD+63,+%D0%91%D1%83%D1%80%D0%B3%D0%B0%D1%81,+%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F&t=&z=17&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Nails Room Бургас">
+    </iframe>
   </div>
   <div class="contact-info">
     <div class="contact-logo">Nails <span>Room</span></div>
     <div class="contact-tagline">Студио за маникюр · Бургас</div>
-    <div class="contact-block">
-      <h4>Адрес</h4>
-      <p>ул. „Цар Калоян" 63<br>гр. Бургас, България</p>
-    </div>
-    <div class="contact-block">
-      <h4>Контакти</h4>
-      <a href="tel:+359894714546">+359 894 714 546</a><br>
-      <a href="https://www.facebook.com/Ruminailsroom" target="_blank">Facebook / Nails Room</a>
-    </div>
-    <div class="contact-block">
-      <h4>Работно време</h4>
-      <p>Пон – Пет: 09:00 – 19:00<br>Събота: 09:00 – 16:00<br><span style="opacity:0.4">Неделя — почивен ден</span></p>
-    </div>
-    <div class="contact-social">
-      <a href="https://www.facebook.com/Ruminailsroom" target="_blank" rel="noopener" aria-label="Facebook">
+    <div class="cb"><h4>Адрес</h4><p>ул. „Цар Калоян" 63<br>гр. Бургас, България</p></div>
+    <div class="cb"><h4>Контакти</h4><a href="tel:+359894714546">+359 894 714 546</a><br><a href="https://www.facebook.com/Ruminailsroom" target="_blank">Facebook / Nails Room</a></div>
+    <div class="cb"><h4>Работно време</h4><p>Пон – Пет: 09:00 – 19:00<br>Събота: 09:00 – 16:00<br><span style="opacity:.4">Неделя — почивен ден</span></p></div>
+    <div class="csoc">
+      <a href="https://www.facebook.com/Ruminailsroom" target="_blank" aria-label="Facebook">
         <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </a>
     </div>
@@ -404,30 +407,30 @@ footer p{font-size:0.72rem;color:rgba(255,255,255,0.28);letter-spacing:0.08em;}
 
 <footer>
   <p>© 2025 Nails Room · Румяна · Всички права запазени</p>
-  <p>ул. „Цар Калоян" 63, Бургас &nbsp;·&nbsp; <a href="tel:+359894714546" style="color:rgba(255,255,255,0.3)">+359 894 714 546</a></p>
+  <p>ул. „Цар Калоян" 63, Бургас · <a href="tel:+359894714546" style="color:rgba(255,255,255,.3)">+359 894 714 546</a></p>
 </footer>
 
 <script>
-document.getElementById('bookDate').min=new Date().toISOString().split('T')[0];
+document.getElementById('bDate').min=new Date().toISOString().split('T')[0];
 function openMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
 function setCurrency(c){
   document.getElementById('btnBGN').classList.toggle('active',c==='BGN');
   document.getElementById('btnEUR').classList.toggle('active',c==='EUR');
-  document.querySelectorAll('.price-bgn').forEach(el=>el.style.display=c==='BGN'?'block':'none');
-  document.querySelectorAll('.price-eur').forEach(el=>{el.style.fontWeight=c==='EUR'?'600':'400';el.style.fontSize=c==='EUR'?'1.2rem':'1.1rem';});
+  document.querySelectorAll('.pb').forEach(el=>el.style.display=c==='BGN'?'block':'none');
+  document.querySelectorAll('.pe').forEach(el=>{el.style.fontWeight=c==='EUR'?'600':'400';el.style.fontSize=c==='EUR'?'1.2rem':'1.1rem';});
 }
-function submitBooking(){
-  const name=document.getElementById('clientName').value.trim();
-  const phone=document.getElementById('clientPhone').value.trim();
-  const service=document.getElementById('service').value;
-  if(!name||!phone||!service){alert('Моля, попълнете: Вашето ime, телефон и услуга.');return;}
-  document.getElementById('bookingFormInner').style.display='none';
+function submitForm(){
+  const n=document.getElementById('cName').value.trim();
+  const p=document.getElementById('cPhone').value.trim();
+  const s=document.getElementById('svc').value;
+  if(!n||!p||!s){alert('Моля попълнете: ime, телефон и услуга.');return;}
+  document.getElementById('formInner').style.display='none';
   document.getElementById('formSuccess').classList.add('show');
 }
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>40?'0 4px 24px rgba(0,0,0,0.08)':'none';});
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>40?'0 4px 24px rgba(0,0,0,.08)':'none';});
 </script>
 </body>
 </html>
